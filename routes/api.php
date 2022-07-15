@@ -37,32 +37,3 @@ Route::post('/patient', function (){
         'dob' => request('dob'),
         ]);
 });
-// Route::post('/patient', function (){
-
-
-//     request()->validate([
-//     'Name' => 'required',
-//     'dob' => 'required'
-//     ]);
-    
-    
-//         return Post::create([
-//             'Name' => request('Name'),
-//             'dob' => request('dob'),
-//         ]);
-//     });
-
-//     Route::put('/patient/{patient}',function (patient $patient){
-
-//         request()->validate([
-//             'Name' => 'required',
-//             'dob' => 'required'
-//             ]);
-    
-//     $success =  $patient-> update([
-//         'Name' => request('Name'),
-//         'dob' => request('dob')
-//     ]);
-//     return ['success' => $success];
-    
-//     });
