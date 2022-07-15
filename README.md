@@ -1,1 +1,3 @@
-This project is for 
+##Front- End
+install npm 
+npm start
