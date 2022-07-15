@@ -1,0 +1,23 @@
+<div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Type of Service</th>
+        <th scope="col"> General Comments</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor = "let pat of patient" >
+        <td>{{pat.name}}</td>
+        <td>{{pat.dob}}</td>
+        <td>{{pat.gender}}</td>
+        <td>{{pat.service}}</td>
+        <td>{{pat.comments}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
