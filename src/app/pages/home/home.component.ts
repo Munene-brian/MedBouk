@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PatientService } from '../patient.service';
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   addpatientForm! :  FormGroup;
   patients: Ipatient[] = [];
   personaData: PersonaData = new PersonaData;
-  constructor(private patientService: PatientService, private formbuilder:FormBuilder) { }
+  constructor(private patientService: PatientService, private formbuilder:FormBuilder,private http:HttpClient) { }
 
   ngOnInit(): void {
     this.patientService.getpatient()
@@ -23,25 +24,18 @@ export class HomeComponent implements OnInit {
 
     this.addpatientForm = this.formbuilder.group({
       name: ['',[Validators.required,Validators.minLength(3)]],
-      date: ['',[Validators.required]],
-      comment:['',[Validators.required],Validators.minLength(5)],
+      dob: ['',[Validators.required]],
+      comments:['',[Validators.required]],
       service:[''],
       gender:['']
-
 
 
   })
   }
 save(){
- this.personaData.name = this.addpatientForm.value.name;
- this.personaData.dob = this.addpatientForm.value.date;
- this.personaData.gender = this.addpatientForm.value.gender;
- this.personaData.service = this.addpatientForm.value.service;
- this.personaData.comment = this.addpatientForm.value.comment;
-this.patientService.saveUser(this.personaData)
-.subscribe(res => {
-  console.log(res)
-})
+          console.log(this.addpatientForm.value);
 
-}
+          this.patientService.saveUser(this.addpatientForm.value).subscribe((res) => console.log(res));
+    }
+
 }

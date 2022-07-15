@@ -15,9 +15,9 @@ export class PatientService {
   return this.http.get<Ipatient[]>(this.baseURL);
  }
 
- public saveUser(patient: any): Observable<any> {
-  return this.http.post<any>(this.baseURL, patient);
-
+ saveUser(patient: any) {
+  console.log(patient);
+  return this.http.post(this.baseURL,patient)
 }
 
 }

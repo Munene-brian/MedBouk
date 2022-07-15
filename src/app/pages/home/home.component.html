@@ -11,10 +11,10 @@
         
                           <input type="text" class="form-control" id="name" placeholder="Enter fullnames.." formControlName="name">
                 
-                        </div>
+                        
                         <div>
-                          <label for="date">D.o.B</label>
-                          <input type="date" class="form-control" id="date" placeholder="Date of birth" formControlName="date">
+                          <label for="dob">D.o.B</label>
+                          <input type="date" class="form-control" id="dob" placeholder="Date of birth" formControlName="dob">
                         </div>
                         <br><br>
                         <div>
@@ -28,17 +28,20 @@
                         <div>
                             <label for="service">Type of Service</label>
                             <select name="service" id="service" formControlName="service">
-                                <option value="out">Outpatient</option>
-                                <option value="inp">Inpatient</option>
+                                <option value="Outpatient">Outpatient</option>
+                                <option value="Inpatient">Inpatient</option>
                             </select>
                             <br><br>
                         </div>
                         <div>
-                            <label for="comment">Comments</label>
-                            <input type="text" class="form-control" id="comment" placeholder="Enter comments" formControlName="comment">
+                            <label for="comments">Comments</label>
+                            <input type="text" class="form-control" id="comments" placeholder="Enter comment" formControlName="comments">
                   
                         </div>
+                        <div>
                         <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                    </div>
                       </form>
                 </div>
               </div>
@@ -53,3 +56,4 @@
         </div>
     </div>
 </div>
+
